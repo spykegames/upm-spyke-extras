@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate tag format
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          if [[ ! $TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?$ ]]; then
+            echo "Error: Tag must be in format v1.0.0 or v1.0.0-preview"
+            exit 1
+          fi
+          echo "TAG=$TAG" >> $GITHUB_ENV
+          echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+
+      - name: Validate package.json version
+        run: |
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          if [ "$PACKAGE_VERSION" != "$VERSION" ]; then
+            echo "Error: package.json version ($PACKAGE_VERSION) does not match tag version ($VERSION)"
+            exit 1
+          fi
+          echo "Package version validated: $PACKAGE_VERSION"
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          # Get previous tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+
+          if [ -z "$PREV_TAG" ]; then
+            echo "First release - no previous tag found"
+            COMMITS=$(git log --pretty=format:"- %s" HEAD)
+          else
+            echo "Generating changelog from $PREV_TAG to $TAG"
+            COMMITS=$(git log --pretty=format:"- %s" $PREV_TAG..HEAD)
+          fi
+
+          # Write to file for multiline output
+          echo "$COMMITS" > changelog.txt
+          echo "Generated changelog with $(echo "$COMMITS" | wc -l) commits"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.TAG }}
+          body_path: changelog.txt
+          draft: false
+          prerelease: ${{ contains(env.VERSION, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

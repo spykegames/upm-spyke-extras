@@ -1,0 +1,19 @@
+{
+    "name": "Spyke.Extras",
+    "rootNamespace": "Spyke.Extras",
+    "references": [
+        "Spyke.Core",
+        "Spyke.UI",
+        "UniTask",
+        "Zenject"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

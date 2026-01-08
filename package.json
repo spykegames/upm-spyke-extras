@@ -1,0 +1,28 @@
+{
+  "name": "com.spykegames.extras",
+  "version": "0.1.0",
+  "displayName": "Spyke Extras",
+  "description": "Common optional utilities package for Spyke games. Includes effects, icons, image management, I/O helpers, and animation utilities.",
+  "unity": "2021.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/spykegames/upm-spyke-extras",
+  "changelogUrl": "https://github.com/spykegames/upm-spyke-extras/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/spykegames/upm-spyke-extras/blob/main/LICENSE",
+  "dependencies": {
+    "com.spykegames.core": "0.1.0",
+    "com.spykegames.ui": "0.1.0"
+  },
+  "keywords": [
+    "spyke",
+    "extras",
+    "utilities",
+    "effects",
+    "icons",
+    "animation"
+  ],
+  "author": {
+    "name": "Spyke Games",
+    "email": "dev@spykegames.com",
+    "url": "https://spykegames.com"
+  }
+}
