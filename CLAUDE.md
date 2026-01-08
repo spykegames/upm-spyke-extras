@@ -32,7 +32,7 @@ upm-spyke-extras/
 | `Runtime/Icons/` | Icon sprite management | ✅ Done |
 | `Runtime/ImageRepo/` | Remote image loading with cache | ✅ Done |
 | `Runtime/IO/` | File I/O helpers | ✅ Done |
-| `Runtime/Animation/` | Animation utilities | 🚧 TODO |
+| `Runtime/Animation/` | Animation utilities | ✅ Done |
 | `Runtime/Panels/` | Reusable panel components | 🚧 TODO |
 
 ## How to Use
@@ -95,6 +95,4 @@ From `client-bootstrap`:
 - ✅ Icons module (IIconService, IconConfig, addressables support)
 - ✅ ImageRepo module (IImageRepository, memory/disk caching)
 - ✅ IO module (IFileService, JsonSerializer, BinarySerializer)
-
-### Planned Modules
-- 🚧 Animation (tween extensions, sequence helpers)
+- ✅ Animation module (AnimationHelper, SpriteAnimator, SequenceBuilder)
