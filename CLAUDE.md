@@ -31,7 +31,7 @@ upm-spyke-extras/
 | `Runtime/Effects/` | Visual effects (floating text, pulse, shiny) | ✅ Done |
 | `Runtime/Icons/` | Icon sprite management | ✅ Done |
 | `Runtime/ImageRepo/` | Remote image loading with cache | ✅ Done |
-| `Runtime/IO/` | File I/O helpers | 🚧 TODO |
+| `Runtime/IO/` | File I/O helpers | ✅ Done |
 | `Runtime/Animation/` | Animation utilities | 🚧 TODO |
 | `Runtime/Panels/` | Reusable panel components | 🚧 TODO |
 
@@ -94,7 +94,7 @@ From `client-bootstrap`:
 - ✅ Effects module (FloatingText, ShinyEffect, PulseEffect)
 - ✅ Icons module (IIconService, IconConfig, addressables support)
 - ✅ ImageRepo module (IImageRepository, memory/disk caching)
+- ✅ IO module (IFileService, JsonSerializer, BinarySerializer)
 
 ### Planned Modules
-- 🚧 IO (file helpers, JSON serialization)
 - 🚧 Animation (tween extensions, sequence helpers)
