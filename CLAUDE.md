@@ -29,7 +29,7 @@ upm-spyke-extras/
 | Module | Purpose | Status |
 |--------|---------|--------|
 | `Runtime/Effects/` | Visual effects (floating text, pulse, shiny) | ✅ Done |
-| `Runtime/Icons/` | Icon sprite management | 🚧 TODO |
+| `Runtime/Icons/` | Icon sprite management | ✅ Done |
 | `Runtime/ImageRepo/` | Remote image loading with cache | 🚧 TODO |
 | `Runtime/IO/` | File I/O helpers | 🚧 TODO |
 | `Runtime/Animation/` | Animation utilities | 🚧 TODO |
@@ -92,9 +92,9 @@ From `client-bootstrap`:
 - ✅ Assembly definitions configured
 - ✅ CLAUDE.md documentation
 - ✅ Effects module (FloatingText, ShinyEffect, PulseEffect)
+- ✅ Icons module (IIconService, IconConfig, addressables support)
 
 ### Planned Modules
-- 🚧 Icons (IconService, SpriteAtlas helpers)
 - 🚧 ImageRepo (remote image loading, caching)
 - 🚧 IO (file helpers, JSON serialization)
 - 🚧 Animation (tween extensions, sequence helpers)
